@@ -1,7 +1,7 @@
 \chapter{Results}
 
 %\section{Comparing the CNN to the currently used Random Forest}
-After the optimizing process a \num{20} CNNs were trained with the gained insights.
+After the optimizing process \num{20} CNNs were trained with the gained insights.
 A \enquote{\texttt{6c\_4f}} architecture was trained with the mentioned dropout rates
 and \num{5000} batches of pretraining for every layer.
 The hyperparameters were set by a random grid search.
@@ -61,7 +61,7 @@ a poor performance of the CNN can be assumed.
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{Plots/Theta_Plot.pdf}
-    \caption{After \num{83.7}\,\si{\hour} of observation time the Crab nebula can be seen with the CNN with a significance of \num{24.4}\,$\sigma$.}
+    \caption{After \num{83.7}\,\si{\hour} of observation time the Crab nebula can be seen with the CNN with a significance of \num{24.4}\,$\sigma$. To optimize the significance, an angular cut at \num{0.026} and a threshold of \num{0.766} have been used for this plot.}
     \label{fig:theta_plot}
 \end{figure}
 
@@ -75,7 +75,7 @@ Therefore, the big performance difference seems to emerge from a mismatch betwee
 
 
 \chapter{Conclusion}
-\section{Potential Enhancements}
+\section{Potential Improvements}
 To enhance the network's performance, there are two different approaches:
 on the one hand, there is the possibility of changing the input data;
 on the other hand, there are further options to improve the network's structure and data handling.
@@ -95,11 +95,11 @@ Additionally, the flat hexagonal structure has been skewed to fit into a flat sq
 Alternatively, a two-dimensional hexagonal structure could be transformed to a three-dimensional cubic structure
 without losing any neighborhood information at all.
 Furthermore, the time series information has been lost in this thesis by summing it up.
-In contrast to a two dimensional convolution with loss of information, as performed in this thesis,
-a four dimensional convolution with all information could be performed for the feature generation.
+In contrast to a two-dimensional convolution with loss of information, as performed in this thesis,
+a four-dimensional convolution with all information could be performed for the feature generation.
 For this, the library \texttt{TensorFlow} will not be sufficient as such high dimensional convolutions are not yet supported.
 
-Although many architectures have been implemented and many hyperparameters have been evaluated,
+Although many architectures have been implemented and many hyperparameters have been independently evaluated,
 only a small feature space could be investigated in this thesis.
 Naturally, expanding the hyperparameter optimization could yield better results.
 Since all hyperparameters form a feature space themselves, a machine learning algorithm could be designed to predict

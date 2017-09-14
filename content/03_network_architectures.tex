@@ -114,7 +114,7 @@ Therefore a conclusion can be drawn afterwards to narrow this range down or inve
 
 Since only the best networks are of interest, the hyperparameters of the high performing ones are investigated.
 For this analysis, the performance of all computed networks are compared regardless of their architecture.
-As all parameters (batch-size, patch-size, depth and neurons) show only a small impact on the AUC score,
+As all parameters (batch-size, patch-size, depth and neurons) show only a small impact on the ROC-AUC score,
 only small gains in performance can be achieved through optimizing the hyperparameters.
 For this reason the random grid search will be performed for further investigations.
 
@@ -173,7 +173,7 @@ because of the size of the feature space that must be explored.
     \label{fig:random_dropout}
 \end{figure}
 
-Positioning the dropout layer between the convolution layers and the following fully connected layers
+Positioning the dropout layer between the convolution layers and the following fully-connected layers
 appears to have the most positive impact on the network's performance.
 Regularizing the fully connected layers seems to strengthen the network as well.
 On the contrary, dropping too much information in the convolution layers weakens the network overall.
@@ -197,7 +197,7 @@ The rates in table \ref{tab:dropout_rates} were taken from corresponding literat
     \end{tabular}
 \end{table}
 
-Since dropout prolongs the network's training cycle and increases the difficulty of training long networks in general,
+Since dropout prolongs the network's training cycle and increases the difficulty of training deep networks in general,
 pretraining is used to enable efficient training of many layers.
 
 A short network containing dropout layers is trained for a few epochs

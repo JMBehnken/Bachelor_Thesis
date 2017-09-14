@@ -1,30 +1,33 @@
 \thispagestyle{plain}
 
 \section*{Abstract}
-High energetic particles from cosmic sources reach the aerosphere and interact with it.
-Thereby caused particle showers emit Cherenkov radiation, which can be recorded by telescopes at ground-level.
+High energy particles from cosmic sources reach the atmosphere and interact with it.
+The resulting particle showers emit Cherenkov radiation, which can be recorded by telescopes at ground-level.
 
-This thesis is motivated by the study of these images from the FACT telescope through Deep Learning.
-To identify the source of the particles a separation of images caused by gamma rays and hadrons will be realised.
-Therefor a simulated dataset is used to train a Convolutional Neural Network (CNN).
-To come close to the ideal performance \num{30} different network architectures and regularizations are being compared to each other.
+This thesis is motivated by the study of such images taken by the First G-APD Cherenkov Telescope (FACT) through Deep Learning.
+The purpose of this study is, to increase the sensitivity of FACT.
+To identify the source of the particles a separation of images caused by gamma rays and hadrons will be performed.
+For that reason a simulated dataset is used to train a Convolutional Neural Network (CNN).
+To achieve optimal performance, \num{30} different network architectures and regularizations are being compared to each other.
 
-Afterwards a comparison is drawn between the performance of the currently used classifier and the CNN.
-Although the CNN performs comparable on a test dataset, it clearly fails to separate gamma rays from hadrons at real measured images.
-This can be reduced to a systematic error between simulated and real datasets (Monte Carlo Mismatch).
+Afterwards a comparison is made between the performance of the currently used classifier and the CNN.
+Although the CNN performs comparably on a test dataset, it clearly fails to separate gamma rays from hadrons on real measured images.
+This can be attributed to a systematic error between simulated and real datasets (Monte Carlo Mismatch).
 
 \section*{Kurzfassung}
-\begin{german}
+%\begin{german}
 Von kosmischen Quellen erreichen energiereiche Teilchen die obersten Schichten der Erdatmosphäre und wechselwirken mit dieser.
 Dabei entstehende Teilchenschauer senden Tscherenkov-Strahlung aus, welche von Teleskopen am Erdboden aufgenommen werden kann.
 
-Motivation für diese Arbeit ist die Untersuchung dieser Bilder vom FACT-Teleskop mittels Deep Learning.
+Motivation für diese Arbeit ist die Untersuchung dieser Bilder vom First G-APD Cherenkov Teleskop (FACT) mittels Deep Learning.
+Ziel dabei ist eine Verbesserung der Empflindlichkeit von FACT.
 Um die Quellen der Teilchen ausfindig zu machen, werden die durch Gammastrahlung und Hadronen ausgelösten Bilder separiert.
 Hierfür wird auf simulierten Datensätzen ein Convolutional Neural Network (CNN) trainiert.
-Um der optimalen Performance nahe zu kommen werden \num{30} unterschiedliche Netzwerkarchitekturen und Regularisierungen miteinander verglichen.
+Um eine optimale Performance zu erreichen,
+werden \num{30} unterschiedliche Netzwerkarchitekturen und Regularisierungen miteinander verglichen.
 
 Anschließend wird ein Vergleich der Performance zwischen dem bisher eingesetzten Klassifizierer und dem CNN gezogen.
 Obwohl das CNN auf Testddaten eine vergleichbar gute Leistung erreicht,
 zeigt sich ein deutliches Versagen beim Separieren von real gemessenen Bildern.
 Dies wird auf einen systematischen Fehler zwischen simulierten und echten Daten zurückgeführt (Monte Carlo Mismatch).
-\end{german}
+%\end{german}

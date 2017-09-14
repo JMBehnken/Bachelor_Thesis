@@ -1,105 +1,112 @@
 \chapter{Essentials}
 
 
-\section{Cosmic radiation}
+\section{Cosmic Radiation}
 The cosmos is filled with particles of many kinds and sources.
-Whereas the travel direction of charged particles is constantly bend by electromagnetic fields on their journey through space,
-uncharged particles like gamma rays preserve their direction during their voyage.
-This circumstances allow to identify their source.
-Source specific characteristics can be found by determining the particle's properties.
+Whereas the direction of travel of charged particles is constantly bent by electromagnetic fields on their journey through space,
+uncharged particles such as gamma rays preserve their direction during their voyage.
+These circumstances allow the sources to be identified.
+Source specific characteristics can be measured by determining the particle's properties.
 
 \begin{figure}
     \centering
     \includegraphics[scale=1]{Plots/Cosmic_Radiation.pdf}
-    \caption{Uncharged particles propagate straight and charged particles propagate unpredictable through space.}
+    \caption{Uncharged particles propagate in straight lines and charged particles propagate unpredictably through space.}
     \label{fig:cosmic_radiation}
 \end{figure}
 
-Gamma particles as well as hadrons can not cut through the earth's aerosphere and collide therefore with it.
-Upon this collision the cosmic particle transfers some of it's energy the it's collision partner.
-This causes an air shower by reason of the high energies in the \si{\tera\eV} range involved.
-Since the speed of light in air is lower than in space some air shower particles can be faster than the light speed in air
-without violating the cosmic speed of light.
-In this case those particles emit a cone of Cherenkov radiation.
-When a high energetic cosmic particle interacts with the aerosphere, a short flash of Cherenkov light can be detected at ground-level.
+Neither gamma particles nor hadrons can pass through the Earth's atmosphere and for this reason collide with it.
+In this way the cosmic particle transfers some of its energy to its collision partner.
+This causes an air shower by reason of the high energies in the \si{\mega\eV} range involved.
+Since the speed of light in air is lower than in space,
+some particles in an air shower can be faster than the speed of light in air
+without violating the speed of light in vacuum;
+these particles emit a cone of Cherenkov radiation.
+When a high energy cosmic particle interacts with the atmosphere,
+a short flash of Cherenkov light can be detected at ground-level \cite{basic_physics}.
 
 \begin{figure}
     \centering
     \includegraphics[scale=1]{Plots/Air_Shower.pdf}
-    \caption{Cosmic particles cause Cherenkov light emitting air showers in the aerosphere by colliding with it.}
+    \caption{Cosmic particles cause air showers in the atmosphere by colliding with it. These showers emit Cherenkov light}
     \label{fig:air_shower}
 \end{figure}
 
 
-\section{FACT telescope}
-Among other telescopes the First G-APD Cherenkov Telescope (FACT) on La Palma records these light flashes.
-It uses Geiger-mode avalanche photodiods (G-APDs) as photo sensors for a test benchmark of this technology.
-With its small mirror surface of \num{9.5}\,\si{\meter²} it operates since \num{2011}
-and collects data of air showers caused by cosmic radiation in the TeV energy range.
+\section{The First G-APD Cherenkov Telescope}
+Among other telescopes, the First G-APD Cherenkov Telescope (FACT) on La Palma records these light flashes.
+It uses Geiger-mode avalanche photodiodes (G-APDs) as optical sensors for a test benchmark of this technology.
+With a comparatively small mirror surface area of \num{9.5}\,\si{\meter²} it has operated since \num{2011}
+and takes images of air showers caused by cosmic radiation in the TeV energy range \cite{FACT}.
 
 The \num{1440} camera pixels form a hexagonal grid.
-This hexagonal pixel structure represents a challenge for the further image processing
-since software for image classification was developed for images with quadratic pixels.
-Therefor the camera image has to be transformed by using the pixel IDs to map the hexagonal to a quadratic grid structure.
+This hexagonal pixel structure represents a challenge for further image processing
+as software for image classification was developed for images with square pixels.
+Therefore, the camera image has to be transformed by using the pixel IDs
+to map from the hexagonal to a quadratic grid structure \cite{hexagonal}.
 Skewing the image by translating it to a different coordinate system and padding it with empty pixels
 enables further processing without developing special software.
-One drawback of this procedure is the loss of some direct neighborhood information
-(hexagonal: \num{6} neighbors, quadratic: \num{4} neighbors) of every pixel.
+One drawback of this procedure is the loss of some direct neighborhood information for every pixel
+(hexagonal: \num{6} neighbors, square: \num{2}\,times \num{4} equivalent neighbors).
 
 \begin{figure}
     \centering
     \includegraphics[width=100mm]{Plots/FACT_Image.pdf}
-    \caption{Translating the FACT camera image to a new coordinate system by using the shown axes allows a transformation from a hexagonal to a quadratic grid structure.}
+    \caption{Translating the FACT camera image to a new coordinate system by using the axes shown allows a transformation from a hexagonal to a square grid structure.}
     \label{fig:fact_image}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=60mm]{Plots/Preprocessed_Image.png}
-    \caption{The transformed camera image will be padded with zeros and has a final size of \num{45} to \num{46} pixels.}
+    \caption{The transformed camera image will be padded with zeros and has a final size of \num{45} by \num{46} pixels.}
     \label{fig:preprocessed_image}
 \end{figure}
 
 
 
 \section{Convolutional Neural Networks}
-In the recent years Deep Learning evolved at an incredible rate and generated impressive progress in image classification tasks.
-Utilizing the progress this thesis tests the benefit of Convolutional Neural Networks (CNN) for classifying the skewed camera images
-by their triggering cosmic particle.
-To separate images caused by gammas or hadrons there are many possible architectures for the CNN.
-Every architecture is composed of layers with different tasks.
-The image will then be passed and transformed from layer to layer till it reaches the last one.
+In recent years Deep Learning has evolved at an incredible rate and made impressive progress in image classification tasks.
+In light of this, this thesis tests the utility of Convolutional Neural Networks (CNN) for classifying the skewed camera images
+by the particle type which induced the air shower.
+For differentiating between images caused by gammas or hadrons, there are many possible architectures for the CNN.
+With this in mind, every architecture is composed of layers each with a different role.
+The image will then be passed from layer to layer, undergoing transformations at each one.
 
-Convolution layers (depicted in the plots as 'c') act as feature generators.
-Patterns in the image will be translation invariantly recognized therein.
+\begin{itemize}
+\item Convolution layers (denoted in the plots by \enquote{c}) act as feature generators.
+These layers allow for the translation invariant recognition of patterns.
 
-Pooling layers reduce the feature space by selecting the most important ones.
-They are following a convolution layer and will not be depicted in the plots.
+\item Pooling layers reduce the feature space by selecting the most important features.
+They follow convolution layers and will not be denoted in the plots.
 
-Fully connected layers (depicted as 'f') complete the network in the final stages.
-They combine the computed features and classify the image at the same time.
+\item Fully-connected layers (denoted by \enquote{f}) will make up the final layers of the net.
+They combine the computed features and classify the image.
+\end{itemize}
 
 \begin{figure}
     \centering
     \includegraphics[scale=1]{Plots/CNN_Example.pdf}
-    \caption{The input image will be transformed by every layer and passed onto the next one till it finally reaches the output layer classifying the image.}
+    \caption{The input image will be transformed by each layer and passed onto the next one until it finally reaches the output layer, which classifies the image.}
     \label{fig:cnn_example}
 \end{figure}
 
-To minimize overfitting behavior and maximize generalization of the network different approaches can be used.
-To attain evenly distributed pixel values normalization of every batch of images fed to the network is used (batch normalization).
+To minimize overfitting behavior and maximize generalizability of the network, different approaches can be used.
+To attain evenly-distributed pixel values,
+each batch of images fed into the network is preprocessed to have a mean of \num{0} and a standard deviation of \num{1} (batch normalization).
 
-At the cost of longer training times dropout layers ('d') can be inserted after any layer.
-This will destroy some of the information flowing through the network
-and force it to learn distributed representations of every feature making it more robust.
+At the expense of longer training times, dropout layers (\enquote{d}) can be inserted after any layer.
+This will drop some of the information flowing through the network
+and force it to learn distributed representations of every feature, making the network more robust.
 
-To enable long networks and faster training pretraining will be implemented.
-After training small networks for a short time a new untrained layer will be attached.
-This process will be iterated until the networks growth reached its final length.
-While most of the layers only have to adapt slightly
-the new layers can adjust their behavior according the pretrained network quickly.
+To enable deeper networks and faster training, pretraining will be employed.
+After training shallow networks for a short time, a new, untrained layer will be attached.
+This process will be repeated until the network's growth reached its final depth.
+While most of the layers only have to adapt slightly,
+the new layers can adjust their behavior according to the pretrained network quickly.
+Additional insights into Convolutional Neural Networks and Deep Learning can be found in Ian Goodfellow's book \enquote{Deep Learning} \cite{deeplearning}.
 
-For modeling the layers and the architectures Google's python library tensorflow has been used.
-After creating the training programm's structure GPUs were used for training purposes
-to utilize their parallel computing capabilities and cutting down the training time thereby.
-Thats why the training times fluctuated roughly between \num{60}\,\si{\minute} and \num{120}\,\si{\minute} for a single network.
+For implementing the layers and the architectures Google's Python library \texttt{TensorFlow} \cite{tensorflow} has been used.
+GPUs were used for training
+to take advantage of their parallel computing capabilities and thereby cutting down the training time.
+This results in training times fluctuating between \num{15}\,\si{\minute} and \num{90}\,\si{\minute} for a single network.

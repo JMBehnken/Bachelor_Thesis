@@ -1,0 +1,17 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Essentials}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Cosmic Radiation}{2}{section.2.1}
+\contentsline {section}{\numberline {2.2}The First G-APD Cherenkov Telescope}{3}{section.2.2}
+\contentsline {section}{\numberline {2.3}Convolutional Neural Networks}{5}{section.2.3}
+\contentsline {chapter}{\numberline {3}Optimizing the CNN}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Processing the Images}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Comparing Architectures}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}Regularizing the Network}{11}{section.3.3}
+\contentsline {chapter}{\numberline {4}Results}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusion}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}Potential Improvements}{18}{section.5.1}
+\contentsline {section}{\numberline {5.2}Outlook}{19}{section.5.2}
+\contentsline {chapter}{\nonumberline Bibliography}{20}{chapter*.20}

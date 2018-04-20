@@ -1,3 +1,11 @@
+# Bachelor-Thesis
+
+The repository contains the texts and templates for my Bachelor-Thesis.
+For information about the template author please read the following paragraph.
+
+
+
+
 # TUDoThesis [![Build Status](https://travis-ci.org/MaxNoe/tudothesis.svg?branch=master)](https://travis-ci.org/MaxNoe/tudothesis)
 
 

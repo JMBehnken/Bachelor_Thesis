@@ -1,4 +1,4 @@
-# Bachelor-Thesis
+# Bachelor-Thesis: "Gamma-Hadron Separation with Deep Learning for the First G-APD Cherenkov Telescope"
 
 The repository contains the texts and templates for my Bachelor-Thesis.
 For information about the template author please read the following paragraph.
